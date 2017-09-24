@@ -63,8 +63,11 @@ gulp.task('js:dep', function () {
         .pipe(gulp.dest('static/assets/js'));
 });
 
-
 gulp.task('watch', ['sass:dep', 'sass:app', 'js:dep'], function() {
     gulp.watch('src/scss/bootstrap/*.scss', ['sass:dep']);
     gulp.watch('src/scss/*.scss', ['sass:app']);
 });
+
+gulp.task('dist', ['sass:dep', 'sass:app', 'css:minify:app', 'js:dep']);
+
+gulp.task('default', ['dist']);
