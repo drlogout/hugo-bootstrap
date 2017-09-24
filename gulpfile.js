@@ -20,7 +20,7 @@ gulp.task('sass:dep', function () {
 
 gulp.task('sass:app', function () {
     return gulp.src([
-            'src/scss/custom.scss'
+            'src/scss/app.scss'
         ])
         .pipe(sass())
         .pipe(autoprefixer({
@@ -70,4 +70,4 @@ gulp.task('watch', ['sass:dep', 'sass:app', 'js:dep'], function() {
 
 gulp.task('dist', ['sass:dep', 'sass:app', 'css:minify:app', 'js:dep']);
 
-gulp.task('default', ['dist']);
+gulp.task('default', ['watch']);
