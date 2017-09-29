@@ -2,13 +2,3 @@
 <script src="{{ "assets/js/dep.js" | relURL }}"></script>
 <script src="{{ "assets/js/app.js" | relURL }}"></script>
 
-<script>hljs.initHighlightingOnLoad();</script>
-
-{{ with .Site.DisqusShortname }}
-<script id="dsq-count-scr" src="//{{ . }}.disqus.com/count.js" async></script>
-{{ end }}
-
-<script src="{{ "assets/js/script.js" | relURL }}"></script>
-
-{{ template "_internal/google_analytics_async.html" . }}
-

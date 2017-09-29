@@ -46,7 +46,7 @@
 <meta name="twitter:domain" content="{{ .Site.BaseURL }}">
   {{ end }}
 
-<script type="application/ld+json">
+<!-- <script type="application/ld+json">
   {
     "@context": "http://schema.org",
     "@type": "Article",
@@ -59,7 +59,7 @@
     "description": "{{ .Description }}",
     "wordCount": {{ .WordCount }}
   }
-</script>
+</script> -->
 {{ end }}
 
 {{ if .RSSLink }}
@@ -67,7 +67,8 @@
 {{ end }}
 <link rel="canonical" href="{{ .Permalink }}" />
 
-<link rel="apple-touch-icon-precomposed" sizes="144x144" href="{{ "/touch-icon-144-precomposed.png" | absURL }}">
-<link href="{{ "/favicon.ico" | absURL }}" rel="icon">
+<link href="https://fonts.googleapis.com/css?family=Roboto:400,400i,700" rel="stylesheet">
+<link rel="stylesheet" href="{{ "assets/css/dep.css" | relURL }}">
+<link rel="stylesheet" href="{{ "assets/css/app.css" | relURL }}">
 
 {{ .Hugo.Generator }}

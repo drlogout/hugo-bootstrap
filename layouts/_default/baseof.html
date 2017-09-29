@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html class="no-js">
+</head>
+{{ partial "base/head" . }}
+
+{{ block "head" . }}
+{{ end }}
+
+<head>
+    
+{{ if eq $.Page.RelPermalink "/" }}
+    {{ $.Scratch.Add "bodyClass" "home" }}
+{{ else }}
+    {{ $.Scratch.Add "bodyClass" (trim (replace $.Page.RelPermalink "/" " ") " ") }}
+{{ end }}
+<body class="{{ $.Scratch.Get "bodyClass" }}">
+    {{ partial "base/header" . }}
+    
+    {{ block "main" . }}
+    {{ end }}
+    
+    {{ partial "base/footer" . }}
+    {{ partial "base/scripts" . }}
+    
+    {{ block "footer" . }}
+    {{ end }}
+  </body>
+</html>
